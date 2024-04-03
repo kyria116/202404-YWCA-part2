@@ -1,0 +1,182 @@
+footer{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 50px 10.5%;
+    background-color: $secondary-color;
+    @include mediaquery(768px, 1440px) {
+        padding: 40px;
+    }
+    @include mediaquery(null, 1366px) {
+        flex-direction: column;
+        align-items: baseline;
+    }
+    @include mediaquery(null, 767px) {
+        padding: 35px 25px;
+    }
+    .footer{
+        display: flex;
+        align-items: center;
+        @include mediaquery(null, 991px){
+            flex-direction: column;
+            align-items: baseline;
+            width: 100%;
+        }
+        .f_logoBox a{
+            display: block;
+            width: 262px;
+            @include mediaquery(992px, null){
+                width: 293px;
+                padding-right: 30px;
+                border-right: 1px solid #D9D9D9;
+            }
+        }
+        .f_menu{
+            display: flex;
+            align-items: center;
+            @include mediaquery(null, 767px) {
+                flex-direction: column;
+                align-items: baseline;
+                width: 100%;
+            }
+            .f_info{
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                line-height: 1.5;
+                @include mediaquery(null, 767px) {
+                    flex-direction: column;
+                    align-items: baseline;
+                    margin-bottom: 22px;
+                    width: 100%;
+                }
+                li{
+                    margin-left: 30px;
+                    @include mediaquery(null, 991px){
+                        margin: 20px 30px 0 0;
+                    }
+                    @include mediaquery(null, 767px) {
+                        display: flex;
+                        align-items: baseline;
+                        width: 100%;
+                        margin: 10px 0 0;
+                    }
+                }
+                .fm_title{
+                    color: $primary-color;
+                    @include mediaquery(null, 767px) {
+                        flex: 0 0 52px;
+                    }
+                }
+                .fm_info{
+                    color: #000;
+                    letter-spacing: 0;
+                    @include mediaquery(null, 767px) {
+                        flex: 1;
+                    }
+                }
+                a{
+                    transition: opacity 0.75s;
+                    &:hover{
+                        @include mediaquery(768px, null){
+                            opacity: 0.7;
+                        }
+                    }
+                }
+            }
+            .f_icon{
+                display: flex;
+                align-items: center;
+                margin-left: 18px;
+                @include mediaquery(null, 767px) {
+                    margin: 0;
+                }
+                li{
+                    margin-left: 12px;
+                    @include mediaquery(null, 767px) {
+                        margin: 0 15px 0 0;
+                    }
+                    a{
+                        position: relative;
+                        display: block;
+                        width: 36px;
+                        height: 36px;
+                        transition: opacity 0.75s;
+                        @include mediaquery(null, 767px) {
+                            width: 42px;
+                            height: 42px;
+                        }
+                        &:hover{
+                            @include mediaquery(768px, null){
+                                opacity: 0.7;
+                            }
+                        }
+                        &::before{
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                        &.fb{
+                            background: url('../images/common/fb.png') center / contain no-repeat;
+                        }
+                        &.yt{
+                            background: url('../images/common/yt.png') center / contain no-repeat;
+                        }
+                        &.line{
+                            background: url('../images/common/line.png') center / contain no-repeat;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .copyrightBox{
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: #777;
+        @include mediaquery(992px, 1366px){
+            align-self: end;
+        }
+        @include mediaquery(768px, 991px){
+            margin-top: 10px;
+        }
+        @include mediaquery(null, 767px){
+            margin: 30px auto 0;
+            margin-top: 30px;
+        }
+        .copyright{
+            position: relative;
+            padding-right: 20px;
+            margin-right: 20px;
+            @include mediaquery(null, 767px) {
+                letter-spacing: 0;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                width: 2px;
+                height: 18px;
+                background-color: #D9D9D9;
+            }
+        }
+        .terms{
+            border-bottom: 1px solid #777;
+            transition: opacity 0.75s;
+            @include mediaquery(null, 767px) {
+                letter-spacing: 0;
+            }
+            &:hover{
+                @include mediaquery(768px, null){
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+}

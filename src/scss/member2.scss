@@ -1,0 +1,1092 @@
+@import "base/mixin";
+@import "base/variable";
+@import "reservation";
+
+
+.memberInfo{
+    .activeItem{
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 32px;
+        @include mediaquery(null, 767px){
+            margin-bottom: 12px;
+        }
+        >li{
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px 0 rgba(0, 71, 157, 0.25);
+            transition: box-shadow 0.75s;
+            @include mediaquery(1201px, null){
+                width: calc((100% - 48px) / 3);
+                margin: 0 24px 60px 0;
+                &:nth-child(3n){
+                    margin-right: 0;
+                }
+            }
+            @include mediaquery(768px, 1200px){
+                width: calc((100% - 24px) / 2);
+                margin: 0 24px 45px 0;
+                &:nth-child(2n){
+                    margin-right: 0;
+                }
+            }
+            @include mediaquery(null, 767px){
+                width: 100%;
+                margin: 0 0 28px 0;
+            }
+            &:hover{
+                @include mediaquery(768px, null) {
+                    box-shadow: 0 0 20px 0 rgba(0, 71, 157, 0.25);
+                    img{
+                        opacity: 0.7;
+                    }
+                    .title{
+                        color: $primary-color;
+                    }
+                }
+            }
+            >a{
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+        }
+        .img{
+            position: relative;
+            img{
+                display: block;
+                width: 100%;
+                aspect-ratio: 1 / 0.651;
+                transition: opacity 0.75s;
+            }
+            .txt{
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: inline-block;
+                height: 39px;
+                line-height: 42px;
+                padding: 0 16px;
+                font-size: 16px;
+                font-weight: 500;
+                background-color: #F42F52;
+                border-radius: 5px;
+                color: #fff;
+                text-align: center;
+                @include mediaquery(null, 767px){
+                    height: 35px;
+                    line-height: 37px;
+                    padding: 0 12px;
+                }
+            }
+        }
+        .whiteBox{
+            flex: 1;
+            padding: 15px 20px 11px 28px;
+            background-color: #fff;
+            @include mediaquery(null, 767px){
+                padding: 16px 20px;
+            }
+            .date{
+                font-size: 16px;
+                line-height: 1.1875;
+                color: $primary-color;
+                letter-spacing: 0;
+                margin-bottom: 5px;
+            }
+            .title{
+                font-size: 24px;
+                font-weight: 500;
+                line-height: 1.458;
+                color: #000;
+                margin-bottom: 10px;
+                transition: color 0.75s;
+            }
+            .listBox{
+                margin-bottom: 5px;
+                @include mediaquery(null, 767px){
+                    margin-bottom: 20px;
+                }
+                .price{
+                    .s_info{
+                        padding-right: 8px;
+                        @include mediaquery(null, 991px){
+                            padding-right: 0px;
+                        }
+                    }
+                }
+                li{
+                    display: flex;
+                    align-items: baseline;
+                    font-size: 16px;
+                    font-weight: 400;
+                    letter-spacing: 0;
+                    margin-bottom: 5px;
+                    @include mediaquery(null, 767px){
+                        margin-bottom: 0;
+                    }
+                    .m_title{
+                        line-height: 1.5;
+                        color: $primary-color;
+                        flex: 0 0 52px;
+                    }
+                    .m_info{
+                        line-height: 1.5;
+                        flex: 1;
+                        li{
+                            @include mediaquery(null, 991px){
+                                justify-content: space-between;
+                            }
+                        }
+                    }
+                    .s_title{
+                        flex: 0 0 106px;
+                    }
+                    .s_info{
+                        display: flex;
+                        align-items: baseline;
+                        i{
+                            display: inline-block;
+                            margin-left: 12px;
+                            font-size: 14px;
+                            color: #F42F52;
+                            @include mediaquery(null, 1400px){
+                                display: none;
+                            }
+                        }
+                    }
+                    &.gooseYellow{
+                        position: relative;
+                        @include mediaquery(null, 1400px){
+                            flex-wrap: wrap;
+                        }
+                        &::after{
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: -8px;
+                            width: calc(100% + 8px);
+                            height: 100%;
+                            background-color: #FFF7DC;
+                            @include mediaquery(null, 991px){
+                                width: calc(100% + 16px);
+                            }
+                        }
+                        div{
+                            position: relative;
+                            z-index: 2;
+                        }
+                        .mo_991{
+                            display: none;
+                            width: 100%;
+                            font-size: 14px;
+                            color: #F42F52;
+                            @include mediaquery(null, 1399px){
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+            .tags{
+                display: flex;
+                flex-wrap: wrap;
+                li{
+                    font-size: 14px;
+                    padding: 0 10px;
+                    height: 26px;
+                    line-height: 28px;
+                    border-radius: 5px;
+                    color: #fff;
+                    background-color: $primary-color;
+                    margin: 0 4px 4px;
+                    @include mediaquery(null, 767px){
+                        height: 28px;
+                        line-height: 30px;
+                    }
+                }
+            }
+        }
+        .states{
+            padding: 12px 28px;
+            @include mediaquery(null, 767px){
+                padding: 9px 20px;
+            }
+            &.willOpenActive{
+                color: #F42F52;
+                background-color: rgba(244, 47, 82, 0.1);
+                span{
+                    display: none;
+                }
+            }
+            &.openActive{
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                color: #004EA2;
+                background-color: rgba(0, 78, 162, 0.1);
+                span{
+                    display: flex;
+                    align-items: center;
+                    font-size: 14px;
+                    color: #F42F52;
+                    img{
+                        display: block;
+                        margin-right: 5px;
+                    }
+                }
+            }
+            &.closeActive{
+                color: #777777;
+                background-color: rgba(119, 119, 119, 0.1);
+                span{
+                    display: none;
+                }
+            }
+        }
+        .like{
+            position: absolute;
+            top: calc((((1200px - 48px) / 3) * 0.651) + 15px);
+            right: 20px;
+            width: 28px;
+            height: 25px;
+            @include mediaquery(1201px, 1364px){
+                top: calc(((((100vw * 0.88 - 17px) - 48px) / 3) * 0.651) + 15px);
+            }
+            @include mediaquery(992px, 1200px){
+                top: calc(((((100vw * 0.88 - 17px) - 23px) / 2) * 0.651) + 15px);
+            }
+            @include mediaquery(768px, 991px){
+                top: calc((((100vw - 100px - 17px - 23px) / 2) * 0.651) + 15px);
+            }
+            @include mediaquery(null, 767px){
+                top: calc(((100vw - 50px) * 0.651) + 20px);
+                right: 20px;
+                width: 27px;
+                height: 24px;
+            }
+            &::before{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url('../images/common/like.png') center / contain no-repeat;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                z-index: 2;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                background: url('../images/common/like_h.png') center / contain no-repeat;
+                transition: opacity 0.75s;
+            }
+            &.active::after{
+                opacity: 1;
+            }
+        }
+    }
+
+    &.collection{
+        .tabBtn{
+            @include mediaquery(null, 767px){
+                margin-bottom: 38px;
+            }
+        }
+        .page{
+            margin: 0 auto;
+        }
+    }
+    &.memberInfoBox{
+        .blueTitle{
+            font-size: 32px;
+            font-weight: 500;
+            margin-bottom: 63px;
+            color: $primary-color;
+            text-align: center;
+            @include mediaquery(null, 767px){
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+        }
+        .form_wrap{
+            >div{
+                @include mediaquery(null, 767px){
+                    margin-bottom: 18px;
+                }
+            }
+            .homePhone .m_info span:nth-child(4), .homePhone .m_info input:nth-child(5){
+                @include mediaquery(null, 767px){
+                    margin-top: 10px;
+                }
+            }
+        }
+        .form_wrap2{
+            >div{
+                margin-bottom: 34px;
+                @include mediaquery(null, 767px){
+                    margin-bottom: 18px;
+                }
+            }
+        }
+        .allBtn{
+            margin: 26px 0 60px;
+            @include mediaquery(null, 767px){
+                margin: 20px 0 40px;
+            }
+        }
+        .bigBtn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 60px;
+            border-top: 1px solid #D9D9D9;
+            @include mediaquery(null, 767px){
+                padding-top: 40px;
+            }
+            a{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 289px;
+                height: 60px;
+                font-size: 18px;
+                font-weight: 500;
+                border-radius: 5px;
+                border: 1px solid $primary-color;
+                color: $primary-color;
+                transition: opacity 0.75s;
+                @include mediaquery(768px, 991px){
+                    font-size: 17px;
+                }
+                @include mediaquery(null, 767px){
+                    font-size: 16px;
+                    width: 162px;
+                }
+                &:hover{
+                    @include mediaquery(768px, null){
+                        opacity: 0.7;
+                    }
+                }
+                img{
+                    display: inline-block;
+                    height: 21px;
+                    margin-right: 10px;
+                    @include mediaquery(null, 767px){
+                        height: 19px;
+                        margin-right: 5px;
+                    }
+                }
+            }
+            a+a{
+                margin-left: 20px;
+                @include mediaquery(null, 767px){
+                    margin-left: 10px;
+                }
+            }
+        }
+        .tabBtn{
+            @include mediaquery(null, 767px){
+                margin-bottom: 39px;
+            }
+        }
+        .whiteBox{
+            position: relative;
+            display: flex;
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 71, 157, 0.25);
+            margin-bottom: 100px;
+            overflow: hidden;
+            @include mediaquery(null, 767px){
+                flex-direction: column-reverse;
+                margin-bottom: 50px;
+                border-radius: 10px;
+            }
+            .leftBox{
+                display: flex;
+                flex-direction: column;
+                flex: 0 0 320px;
+                padding: 25px 35px 30px;
+                background: url('../images/memberMask.jpg') center / cover no-repeat;
+                @include mediaquery(null, 1200px){
+                    padding: 25px;
+                    flex: 0 0 300px;
+                }
+                @include mediaquery(null, 767px){
+                    padding: 20px 28px 26px;
+                    text-align: center;
+                    flex: 0 0 auto;
+                }
+                .txt_1{
+                    font-size: 24px;
+                    font-weight: 500;
+                    color: $primary-color;
+                    margin-bottom: 12px;
+                    @include mediaquery(null, 767px){
+                        font-size: 19px;
+                        margin-bottom: 12px;
+                    }
+                }
+                .txt_2{
+                    display: flex;
+                    align-items: baseline;
+                    justify-content: space-between;
+                    margin-bottom: 12px;
+                    @include mediaquery(null, 767px){
+                        max-width: 210px;
+                        margin: 0 auto 4px;
+                    }
+                    p{
+                        font-size: 18px;
+                        @include mediaquery(null, 767px){
+                            font-size: 16px;
+                        }
+                        &:nth-child(1){
+                            font-weight: 500;
+                            color: $primary-color;
+                        }
+                    }
+                }
+                .txt_3{
+                    display: flex;
+                    align-items: center;
+                    font-size: 14px;
+                    color: #F42F52;
+                    margin-bottom: 50px;
+                    @include mediaquery(null, 991px){
+                        margin-bottom: 10px;
+                    }
+                    @include mediaquery(null, 767px){
+                        justify-content: center;
+                    }
+                    img{
+                        display: block;
+                        margin-right: 8px;
+                    }
+                }
+                a:not(.goBtn){
+                    margin: 0 auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 220px;
+                    height: 60px;
+                    line-height: 60px;
+                    color: #fff;
+                    font-size: 18px;
+                    font-weight: 500;
+                    background-color: $primary-color;
+                    border-radius: 5px;
+                    transition: opacity 0.75s;
+                    @include mediaquery(null, 767px){
+                        font-size: 16px;
+                        width: 210px;
+                    }
+                    &:hover{
+                        @include mediaquery(768px, null){
+                            opacity: 0.7;
+                        }
+                    }
+                    img{
+                        display: block;
+                        margin-right: 15px;
+                    }
+                }
+            }
+            .rightBox{
+                padding: 60px 80px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                background: url('../images/pattern.png') center right / contain no-repeat;
+                @include mediaquery(1201px, 1440px){
+                    padding: 45px 50px;
+                }
+                @include mediaquery(992px, 1200px){
+                    padding: 40px 30px;
+                }
+                @include mediaquery(null, 991px){
+                    flex-direction: column;
+                    align-items: baseline;
+                    justify-content: start;
+                    padding: 40px;
+                }
+                @include mediaquery(null, 767px){
+                    padding: 30px 30px 20px;
+                    background: url('../images/pattern_mo.png') bottom -40px right/52% no-repeat;
+                }
+                >div{
+                    flex: 0 0 45.2%;
+                    @include mediaquery(1201px, 1440px){
+                        flex: 0 0 58%;
+                    }
+                    @include mediaquery(992px, 1200px){
+                        flex: 0 0 63%;
+                    }
+                    @include mediaquery(null, 991px){
+                        flex: 0 0 auto;
+                    }
+                    &:nth-child(2){
+                        @include mediaquery(1201px, 1440px){
+                            flex: 0 0 40%;
+                        }
+                        @include mediaquery(992px, 1200px){
+                            flex: 0 0 35%;
+                        }
+                        @include mediaquery(null, 991px){
+                            flex: 0 0 auto;
+                        }
+                    }
+                }
+                .name{
+                    display: flex;
+                    align-items: center;
+                    font-size: 32px;
+                    font-weight: 500;
+                    line-height: 1;
+                    margin-bottom: 30px;
+                    @include mediaquery(null, 767px){
+                        font-size: 22px;
+                        margin-bottom: 20px;
+                    }
+                    img{
+                        display: block;
+                        margin-right: 15px;
+                    }
+                }
+                .info{
+                    display: flex;
+                    align-items: baseline;
+                    font-size: 18px;
+                    margin: 16px 0;
+                    @include mediaquery(null, 767px){
+                        font-size: 16px;
+                        margin: 11px 0;
+                    }
+                    &:last-child{
+                        @include mediaquery(null, 991px){
+                            margin-bottom: 0;
+                        }
+                    }
+                    &.infoTop{
+                        margin: 0;
+                    }
+                    .m_title{
+                        font-weight: 500;
+                        color: $primary-color;
+                        flex: 0 0 68px;
+                        @include mediaquery(null, 1440px){
+                            flex: 0 0 54px;
+                        }
+                    }
+                    .m_info{
+                        display: flex;
+                        align-items: center;
+                        @include mediaquery(null, 991px){
+                            position: relative;
+                        }
+                        a{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 115px;
+                            height: 38px;
+                            color: $primary-color;
+                            background-color: #DFF2FC;
+                            border-radius: 5px;
+                            margin-left: 20px;
+                            font-size: 14px;
+                            font-weight: 500;
+                            transition: opacity 0.75s;
+                            @include mediaquery(null, 991px){
+                                position: absolute;
+                                top: 50%;
+                                right: -135px;
+                                transform: translateY(-50%);
+                            }
+                            @include mediaquery(null, 767px){
+                                width: 102px;
+                                height: 34px;
+                                right: -122px;
+                            }
+                            &:hover{
+                                @include mediaquery(768px, null){
+                                    opacity: 0.7;
+                                }
+                            }
+                            img{
+                                display: block;
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+            .goBtn{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                width: 124px;
+                height: 36px;
+                line-height: 37px;
+                border-radius: 5px;
+                background-color: #F42F52;
+                color: #fff;
+                font-size: 14px;
+                font-weight: 500;
+                transition: opacity 0.75s;
+                @include mediaquery(null, 991px){
+                    position: relative;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    margin-bottom: auto;
+                }
+                @include mediaquery(null, 767px){
+                    margin: 0 auto 23px;
+                } 
+                &:hover{
+                    @include mediaquery(768px, null){
+                        opacity: 0.7;
+                    }
+                }
+                img{
+                    display: inline-block;
+                    width: 6px;
+                    margin-left: 6px;
+                }
+            }
+        }
+        #popup{
+            display: none;
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            .popup_contain{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 1000px;
+                min-height: 440px;
+                max-width: 88%;
+                border-radius: 8px;
+                background: url('../images/bg_pop.png') center / cover no-repeat;
+                padding: 45px 0 45px 60px;
+                display: flex;
+                flex-direction: column;
+                height: auto;
+                @include mediaquery(null, 767px){
+                    border-radius: 7px;
+                    max-width: calc(100% - 30px);
+                    padding: 22px 0 22px 25px;
+                    min-height: 208px;
+                    width: 400px;
+                    background: url('../images/bg_pop.png') center right 80% / cover no-repeat;
+                }
+            }
+            .topPop{
+                flex: 1;
+                display: flex;
+                align-items: baseline;
+                justify-content: space-between;
+                color: #fff;
+                font-size: 36px;
+                @include mediaquery(null, 767px){
+                    font-size: 24px;
+                }
+                .cardSort{
+                    font-weight: 700;
+                    letter-spacing: 0.15em;
+                }
+                p{
+                    position: relative;
+                    font-weight: 600;
+                    padding-right: 60px;
+                    @include mediaquery(null, 767px){
+                        font-size: 19px;
+                        padding-right: 22px;
+                    }
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        bottom: -25px;
+                        left: 0;
+                        width: 100%;
+                        height: 1px;
+                        background-color: #fff;
+                        @include mediaquery(null, 767px){
+                            bottom: -13px;
+                        }
+                    }
+                }
+            }
+            .bottomPop{
+                position: relative;
+                .name{
+                    font-size: 32px;
+                    font-weight: 500;
+                    color: #fff;
+                    margin-bottom: 32px;
+                    @include mediaquery(null, 767px){
+                        font-size: 19px;
+                        margin-bottom: 20px;
+                    }
+                }
+                .infoPop{
+                    display: flex;
+                    align-items: baseline;
+                    color: #fff;
+                    margin-top: 8px;
+                    font-size: 16px;
+                    @include mediaquery(null, 767px){
+                        font-size: 14px;
+                    }
+                    .m_title{
+                        flex: 0 0 5em;
+                        color: rgba(255,255,255,0.5);
+                    }
+                }
+                .logo{
+                    position: absolute;
+                    bottom: -25px;
+                    right: 30px;
+                    width: 228px;
+                    @include mediaquery(null, 767px){
+                        width: 115px;
+                        bottom: -10px;
+                        right: 12px;
+                    }
+                }
+            }
+            .closeIcon{
+                cursor: pointer;
+                position: absolute;
+                top: -25px;
+                right: -25px;
+                transition: opacity 0.75s;
+                @include mediaquery(null, 767px){
+                    top: auto;
+                    bottom: -60px;
+                    right: 50%;
+                    transform: translateX(50%);
+                }
+                &:hover{
+                    @include mediaquery(768px, null){
+                        opacity: 0.6;
+                    }
+                }
+                img{
+                    @include mediaquery(null, 767px){
+                        width: 50px;
+                    }
+                }
+            }
+        }
+        #popup2{
+            // display: none;
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.3);
+            .popup_contain{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 1200px;
+                max-width: 88%;
+                max-height: 80vh;
+                border-radius: 10px;
+                background-color: #fff;
+                padding: 60px 0 60px;
+                text-align: center;
+                @include mediaquery(null, 767px){
+                    border-radius: 7px;
+                    padding: 60px 20px;
+                    max-width: calc(100% - 40px);
+                }
+            }
+            .topPop{
+                font-size: 32px;
+                font-weight: 500;
+                margin-bottom: 40px;
+                @include mediaquery(null, 767px){
+                    font-size: 22px;
+                }
+            }
+            .txt{
+                font-size: 18px;
+                margin-bottom: 40px;
+                line-height: 1.44;
+                @include mediaquery(null, 767px){
+                    font-size: 16px;
+                    line-height: 1.5625;
+                }
+                i{
+                    @include mediaquery(768px, null){
+                        display: block;
+                    }
+                }
+                .red{
+                    color: #F42F52;
+                    font-weight: 500;
+                }
+                .blue{
+                    color: $primary-color;
+                    font-weight: 500;
+                }
+            }
+            .allBtn{
+                margin: 0;
+            }
+            .closeIcon{
+                cursor: pointer;
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                transition: opacity 0.75s;
+                @include mediaquery(null, 767px){
+                    top: 18px;
+                    right: 18px;
+                }
+                &:hover{
+                    @include mediaquery(768px, null){
+                        opacity: 0.6;
+                    }
+                }
+                img{
+                    @include mediaquery(null, 767px){
+                        width: 17px;
+                    }
+                }
+            }
+        }
+    }
+}
+.orderDetail2 {
+    .orderItems{
+        >li.typeTransfer{
+            .num{
+                @include mediaquery(768px, 991px){
+                    top: -76px;
+                }
+                @include mediaquery(null, 767px){
+                    top: -56px;
+                }
+            }
+            .orderTop{
+                .listBtn{
+                    position: relative;
+                    display: block;
+                    width: 100%;
+                    border-radius: 5px;
+                    padding: 15px 20px;
+                    font-size: 18px;
+                    margin-bottom: 20px;
+                    @include mediaquery(null, 767px){
+                        font-size: 16px;
+                        padding: 12px;
+                        margin-bottom: 10px;
+                        border-radius: 4px;
+                    }
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        right: 20px;
+                        transform: translateY(-50%) rotate(180deg);
+                        width: 12px;
+                        height: 30px;
+                        transition: transform 0.75s;
+                    }
+                    i{
+                        @include mediaquery(null, 767px){
+                            display: block;
+                        }
+                    }
+                }
+                .contentBox .refund{
+                    margin-bottom: 40px;
+                }
+            }
+            .originalList{
+                .listBtn{
+                    color: #777777;
+                    background-color: #D9D9D9;
+                    &::before{
+                        background: url('../images/common/select_g.png') center / contain no-repeat;
+                    }
+                }
+                &.close{
+                    .listBtn::before{
+                        transform: rotate(0deg) translateY(-50%);
+                    }
+                }
+                .containTop>li, .titleHeader>li{
+                    &:nth-child(2){
+                        flex: 0 0 41.25%;
+                        @include mediaquery(992px, 1366px){
+                            flex: 0 0 30%;
+                        }
+                    }
+                    &:nth-child(3){
+                        flex: 0 0 11.1%;
+                        @include mediaquery(null, 991px){
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .redBoxTxt{
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+                color: #F42F52;
+                padding-right: 20px;
+                @include mediaquery(null, 991px){
+                    padding: 0;
+                    margin-bottom: 20px;
+                }
+                img{
+                    width: 16px;
+                    height: 16px;
+                    margin-right: 8px; 
+                }
+            }
+            .newList{
+                .listBtn{
+                    color: #fff;
+                    background-color: #004EA2;
+                    &::before{
+                        background: url('../images/common/select_w.png') center / contain no-repeat;
+                    }
+                }
+                &.close{
+                    .listBtn::before{
+                        transform: rotate(0deg) translateY(-50%);
+                    }
+                }
+            }
+        }
+        .memberList {
+            .topList{
+                @include mediaquery(null, 767px){
+                    border: none;
+                    padding: 0;
+                    margin: 0;
+                }
+                .nameBox{
+                    @include mediaquery(768px, null){
+                        cursor: default;
+                    }
+                }
+            }
+            .bottomList{
+                @include mediaquery(null, 767px){
+                    padding-top: 15px;
+                    border-top: 1px solid #D9D9D9;
+                    display: none;
+                }
+            }
+        }
+        .refund {
+            .refundInfo .txt .m_info{
+                @include mediaquery(null, 767px){
+                    padding-right: 50px;
+                }
+            }
+            .refundTxtBtn{
+                position: relative;
+                >.mo{
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translateY(-50%);
+                    max-width: 32px;
+                    transition: transform 0.75s;
+                }
+            }
+            .refundMember{
+                @include mediaquery(null, 767px){
+                    display: none;
+                }
+            }
+        }
+    }
+    .receiptBox{
+        padding: 0;
+        margin-bottom: 40px;
+        @include mediaquery(null, 767px){
+            margin-bottom: 20px;
+        }
+        .infoTitle{
+            text-align: center;
+            height: 32px;
+            line-height: 32px;
+            font-size: 16px;
+            font-weight: 500;
+            background-color: #DFF2FC;
+            color: #004EA2;
+            @include mediaquery(null, 767px){
+                height: 28px;
+                line-height: 28px;
+                font-size: 14px;
+            }
+        }
+        .receiptTop{
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 40px 0;
+            @include mediaquery(null, 767px){
+                padding: 30px;
+            }
+            ul{
+                margin-bottom: 20px;
+                @include mediaquery(null, 767px){
+                    margin-bottom: 0;
+                }
+            }
+            .allBtn{
+                @include mediaquery(null, 767px){
+                    margin-top: 16px;
+                }
+            }
+        }
+    }
+    .nameBox{
+        position: relative;
+        >.mo{
+            position: absolute;
+            top: calc(50% - 11px);
+            right: 0;
+            transform: translateY(-50%) rotate(-180deg);
+            max-width: 32px;
+            transition: transform 0.75s;
+        }
+    }
+}
+.backAllBtn{
+    margin-top: 60px;
+    @include mediaquery(null, 767px){
+        margin-top: 40px;
+    }
+}

@@ -1,0 +1,226 @@
+.course_date {
+  font-size: 16px;
+  color: #004EA2;
+  line-height: 1.13;
+  margin-bottom: 7px;
+  letter-spacing: 0;
+}
+@media all and (max-width: 767px) {
+  .course_date {
+    font-size: 14px;
+    margin-bottom: 1px;
+  }
+}
+
+.course_title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.42;
+}
+@media all and (max-width: 767px) {
+  .course_title {
+    font-size: 19px;
+  }
+}
+
+.course_location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.course_location img {
+  display: inline-block;
+  margin-right: 8px;
+  padding-top: 2px;
+}
+@media all and (max-width: 767px) {
+  .course_location img {
+    width: 13px;
+    padding-top: 4px;
+    margin-right: 6px;
+  }
+}
+.course_location .location {
+  font-size: 18px;
+  line-height: 1.55;
+}
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .course_location .location {
+    font-size: 17px;
+  }
+}
+@media all and (max-width: 767px) {
+  .course_location .location {
+    font-size: 16px;
+  }
+}
+.course_location .location span {
+  display: block;
+  color: #777;
+}
+
+.blueTitle {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  color: #004EA2;
+  text-align: center;
+}
+@media all and (max-width: 767px) {
+  .blueTitle {
+    font-size: 22px;
+    margin-bottom: 23px;
+  }
+}
+
+input, select {
+  font-family: "Noto Sans TC", sans-serif;
+  -webkit-transition: border 0.75s;
+  transition: border 0.75s;
+}
+input:focus, select:focus {
+  border: 1px solid #004EA2;
+}
+
+input[type=date] {
+  position: relative;
+}
+input[type=date]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 20px;
+  background: url("../images/common/date.png") center right/21px 21px no-repeat;
+  width: calc(100% - 150px);
+}
+
+.required {
+  display: none;
+}
+
+.hasRequired input, .hasRequired select {
+  border: 1px solid #F42F52 !important;
+}
+.hasRequired input:focus, .hasRequired select:focus {
+  border: 1px solid #004EA2 !important;
+}
+.hasRequired .required {
+  display: block;
+  padding-top: 4px;
+  height: 16px;
+  font-size: 14px;
+  color: #F42F52;
+}
+.hasRequired .required i {
+  vertical-align: top;
+}
+
+#datepicker {
+  font-family: "Roboto", "Noto Sans TC", sans-serif;
+  cursor: pointer;
+  background: url("../images/common/date.png") center right 20px/21px 21px no-repeat;
+}
+@media all and (max-width: 767px) {
+  #datepicker {
+    background: url("../images/common/date.png") center right 10px/18px 18px no-repeat;
+  }
+}
+
+.ui-widget-header {
+  background: #004EA2;
+  color: #fff;
+}
+
+.ui-state-default .ui-state-default, .ui-widget-content .ui-state-default {
+  text-align: center;
+  border: none;
+  background: transparent;
+  color: #000;
+}
+.ui-state-default .ui-state-active, .ui-widget-content .ui-state-active {
+  position: relative;
+  color: #004EA2;
+}
+.ui-state-default .ui-state-active::after, .ui-widget-content .ui-state-active::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 49%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #004EA2;
+}
+
+.ui-datepicker .ui-datepicker-next {
+  cursor: pointer;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.ui-datepicker .ui-datepicker-next span {
+  background: url("../images/common/memberList_menu.png") center/contain no-repeat;
+}
+.ui-datepicker .ui-datepicker-next.ui-state-hover {
+  background: none;
+  border: none;
+  -webkit-transition: 0.75s;
+  transition: 0.75s;
+}
+.ui-datepicker .ui-datepicker-prev {
+  cursor: pointer;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.ui-datepicker .ui-datepicker-prev span {
+  background: url("../images/common/left.png") center/contain no-repeat;
+}
+.ui-datepicker .ui-datepicker-prev.ui-state-hover {
+  background: none;
+  border: none;
+  -webkit-transition: 0.75s;
+  transition: 0.75s;
+}
+
+.ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {
+  background: transparent;
+  color: #fff;
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 35%;
+  padding: 5px 0;
+  text-align: center;
+  font-size: 18px;
+}
+.ui-datepicker select.ui-datepicker-month option, .ui-datepicker select.ui-datepicker-year option {
+  background: #fff;
+  color: #004EA2;
+}
+.ui-datepicker select.ui-datepicker-month::-webkit-scrollbar, .ui-datepicker select.ui-datepicker-year::-webkit-scrollbar {
+  width: 4px;
+}
+@media all and (max-width: 991px) {
+  .ui-datepicker select.ui-datepicker-month::-webkit-scrollbar, .ui-datepicker select.ui-datepicker-year::-webkit-scrollbar {
+    width: 2px;
+  }
+}
+.ui-datepicker select.ui-datepicker-month::-webkit-scrollbar-button, .ui-datepicker select.ui-datepicker-year::-webkit-scrollbar-button {
+  background: transparent;
+  border-radius: 4px;
+}
+.ui-datepicker select.ui-datepicker-month::-webkit-scrollbar-track-piece, .ui-datepicker select.ui-datepicker-year::-webkit-scrollbar-track-piece {
+  background: #DFF2FC;
+}
+.ui-datepicker select.ui-datepicker-month::-webkit-scrollbar-thumb, .ui-datepicker select.ui-datepicker-year::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #004EA2;
+}
