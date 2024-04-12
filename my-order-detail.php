@@ -1,8 +1,12 @@
 <?php include "quote/template/head.php"; ?>
+<!-- 第二階段有更換css Start -->
 <link rel="stylesheet" href="dist/css/member2.css">
+<!-- 第二階段有更換css End -->
 </head>
 
+<!-- 第二階段有增加Class Start -->
 <body class="lang_tw orderDetail orderDetail2">
+<!-- 第二階段有增加Class End -->
     <?php
         include "quote/template/added.php";
         include "quote/template/nav.php";
@@ -15,6 +19,8 @@
         </div>
         <div class="pagePadding">
             <div class="container">
+
+                <!-- 第二階段有增加/修改 Start -->
                 <section>
                     <div class="blueTitle">訂單資訊</div>
                     <div>
@@ -834,10 +840,12 @@
                         </div>
                     </div>
                 </section>
+                <!-- 第二階段有增加/修改 End -->
 
                 <div class="allBtn backAllBtn">
                     <a href="javascript:history.go(-1);">返回</a>
                 </div>
+
             </div>
         </div>
     </main>
@@ -846,6 +854,8 @@
         include "quote/template/top_btn.php";
     ?>
     <script src="dist/js/main.js"></script>
+    
+    <!-- 第二階段有增加 Start -->
     <script>
         $('.listBox .listBtn').on('click', function () {
             if($(this).parent().hasClass('close')){
@@ -868,6 +878,7 @@
             $('.refundMember').attr('style')
         }
     </script>
+    <!-- 第二階段有增加 End -->
 </body>
 
 </html>
