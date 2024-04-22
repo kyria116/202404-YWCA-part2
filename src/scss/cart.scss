@@ -740,6 +740,18 @@
             }
         }
     }
+    .payWarning{
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.667;
+        color: #F42F52;
+        text-align: center;
+        margin-bottom: -24px;
+        @include mediaquery(null, 767px){
+            font-size: 16px;
+            margin-bottom: 0px;
+        }
+    }
 }
 form{
     margin-bottom: 46px;

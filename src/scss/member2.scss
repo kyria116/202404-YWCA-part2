@@ -533,6 +533,7 @@
                     }
                     @include mediaquery(null, 991px){
                         flex: 0 0 auto;
+                        width: 100%;
                     }
                     &:nth-child(2){
                         @include mediaquery(1201px, 1440px){
