@@ -413,7 +413,7 @@
                                 <div class="popupBox">
                                     <div class="boxColor">
                                         <div class="blueTxtPop">
-                                            營隊報名須知
+                                            活動報名須知
                                         </div>
                                         <div class="redTxtPop">
                                             *各班現場報名及網路報名人數皆有限，人數若已額滿，則不再受理報名*<br>
@@ -447,8 +447,8 @@
                             </div>
                             <div class="checkBoxPop">
                                 <input type="checkbox" name="" id="agreed_3">
-                                <label for="agreed_3" class="disable">我已閱讀並同意「營隊報名須知」內容</label>
-                                <p>（請先詳細閱讀「營隊報名須知」內容）</p>
+                                <label for="agreed_3" class="disable">我已閱讀並同意「活動報名須知」內容</label>
+                                <p>（請先詳細閱讀「活動報名須知」內容）</p>
                             </div>
                         </li>
                     </ul>
